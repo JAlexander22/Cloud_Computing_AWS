@@ -20,7 +20,7 @@
 - SaaS
 ```
 
-#### Data Centers
+#### Data Centre
 
 
 ## AWS Services
