@@ -120,36 +120,33 @@ Execution & Installation of Commands
 - Apply the same configuration to AMI instances
 ```
 
-### What should we Monitor
+### What should we monitor
 ```
 Application Server - EC2
 CPU utilization
 Number of requests
 Firewall
 ```
-### How often we Monitor
 
-### What tools are we going to use to perform these tasks
+### Questions of Monitoring
+- How often we Monitor?
+- What tools are we going to use to perform these tasks?
+- Who will monitor?
+- Who should be notified?
 
-### Who will monitor
-
-### Who should be notified  
-
-#### What are the 4 Golden Signals of monitoring
-- `Latency` = The time it takes to service a request
-- `Traffic` = The amount of activity in the application
-- `Errors` = The rate and type of request that are failing
-- `Saturation` = How full the service.(utilization metrics)
+- What are the 4 Golden Signals of monitoring?
+  - `Latency` = The time it takes to service a request
+  - `Traffic` = The amount of activity in the application
+  - `Errors` = The rate and type of request that are failing
+  - `Saturation` = How full the service.(utilization metrics)
 
 
 ## Automate the Process
 - Application Load Balancers
 - Autoscaling Group
 - Launch template config - How many instances at all times
-- 2 instances - Minimum = 2 & Maximum = 3
+  - 2 instances - Minimum = 2 & Maximum = 3
 - Polices of scaling out and scaling in
-
-### Scaling on Demand
-Scaling up VS Scaling out
-`Scaling up: increasing the size of your instances `
-`Scaling out: increasing the amount of instances `
+- Scaling on Demand
+    `Scaling up: increasing the size of your instances `
+    `Scaling out: increasing the amount of instances `
