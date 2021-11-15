@@ -113,12 +113,15 @@ CustomTCP: port 27017: Source: App_Instance_IP
 Execution & Installation of Commands
 - Follow steps and execute the commands in provision script (Depending on instance)
 - secure copy of certificate, files and directories need for software to run(node app dir)
-- configuration of Nginx proxy file and Mongo.conf file
+- configuration of Nginx proxy file and Mongod.conf file
 
 *OPTIONAL Create a AMI of created instances (makes terminating and re-building easier)
 - On AWS/AMI , create a AMI image of your respective instances
 - Apply the same configuration to AMI instances
 ```
+
+
+![](img/Monitoring.png)
 
 ### What should we monitor
 ```
@@ -150,3 +153,56 @@ Firewall
 - Scaling on Demand
     `Scaling up: increasing the size of your instances `
     `Scaling out: increasing the amount of instances `
+
+
+
+### S3
+`aws s3 ls` = List buckets
+`aws --version` = Check version of AWS
+`aws configure` = To add our keys and config
+`aws s3 mb s3://bucket-name` = Create a bucket
+`aws s3 cp s3://bucket-name/ file.mb` = downloads copy of object of bucket into localhost
+`aws s3 sync s3://bucket-name/ filename.txt ` = sync the copy from localhost to cloud
+`aws s3 rm s3://bucket-name/filename.txt --recursive` = Remove content and objects within bucket
+`aws s3 rb s3://bucket-name/` = Remove the bucket in it entirety
+
+
+
+![](img/AutoScalling.png)
+#### AWSCLI
+- AWSCLI can be used to create any `aws` recourses required.
+
+
+#### AutoScaling and Load Balancing
+Autoscaling Automatically adjusts the amount of computational resources based on the server Load
+Load balancing distributes traffic between EC2 instances so that no one instance gets overwhelmed
+
+#### Steps
+- Autoscaling Group: Launch Template or Launch configuration
+ALB: Target group HTTP 80
+AWS keys
+VPC - Subnets - SG
+Type of instances
+AMI ID
+EBS storage
+
+
+### Create launch Template
+- Add a Name and select `Auto Scaling Guidance` Option & add a Template Tag
+- Add an AMI - Instance type (t2.mirco) - Key Pair
+- Add a VPC and Security Group
+- In `Advanced Details` add `User data` if needed (This provisions commands on launch)
+
+
+### Create a Auto Scaling Groups
+- Add a Auto Scaling group Name
+- Add the launch template  
+- Version: Latest
+- Add a VPC - Subnet
+- Attach Application Load Balancers
+- Select Internet-Facing
+- Enable Cloud Watch
+- Choose a Desired/Minimum & Maximum capacity
+- Target Tracking Policy/ Average CPU Utilization/ 30%
+- Add Notification for Alerts
+- Add Tags
