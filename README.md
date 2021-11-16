@@ -157,18 +157,19 @@ Firewall
 
 
 ### S3
-`aws s3 ls` = List buckets
-`aws --version` = Check version of AWS
-`aws configure` = To add our keys and config
-`aws s3 mb s3://bucket-name` = Create a bucket
-`aws s3 cp s3://bucket-name/ file.mb` = downloads copy of object of bucket into localhost
-`aws s3 sync s3://bucket-name/ filename.txt ` = sync the copy from localhost to cloud
-`aws s3 rm s3://bucket-name/filename.txt --recursive` = Remove content and objects within bucket
-`aws s3 rb s3://bucket-name/` = Remove the bucket in it entirety
+- `aws s3 ls` = List buckets
+- `aws --version` = Check version of AWS
+- `aws configure` = To add our keys and config
+- `aws s3 mb s3://bucket-name` = Create a bucket
+- `aws s3 cp s3://bucket-name/ file.mb` = downloads copy of object of bucket into localhost
+- `aws s3 sync s3://bucket-name/ filename.txt ` = sync the copy from localhost to cloud
+- `aws s3 rm s3://bucket-name/filename.txt --recursive` = Remove content and objects within bucket
+- `aws s3 rb s3://bucket-name/` = Remove the bucket in it entirety
 
 
 
 ![](img\Autoscalling.png)
+
 #### AWSCLI
 - AWSCLI can be used to create any `aws` recourses required.
 
