@@ -168,7 +168,7 @@ Firewall
 
 
 
-![](img/AutoScalling.png)
+![](img\Autoscalling.png)
 #### AWSCLI
 - AWSCLI can be used to create any `aws` recourses required.
 
