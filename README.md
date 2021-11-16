@@ -206,3 +206,50 @@ EBS storage
 - Target Tracking Policy/ Average CPU Utilization/ 30%
 - Add Notification for Alerts
 - Add Tags
+
+##AWS Networking
+`Virtual Private Cloud` - VPC is an private virtual representation of a physical network
+`Internet Gateway` -  To allow connection between VPC and Internet
+`Route Table` - Controls the flow of traffic between instances and internet gateway
+`Security Groups` - Are stateful, meaning changes made to incoming rules `will` be applied to out going rule. Security groups work on a instances level
+`NACL` - Network Access Control Lists are stateless, meaning any changes made to incoming rules `won't` be applied to outgoing rules. NACL work on a network level
+
+
+
+## Creating a Network
+```
+Step 1: VPC CIDR Block 10.108.0.0/16
+Step 2: Internet gateway (IT)
+  2.1: Attach the IG to VPC
+
+Step 3: Route Table (RT)
+  3.1: Allow 10.0.0.0/16
+  3.2: Allow all 0.0.0.0/16
+
+Step 4: Public subnet 10.108.1.0/24 - used for Node-app 3000
+  4.1: Connect to our VPC
+  4.2: Private Subnets 10.108.2.0/24 -used for Mongodb 27017
+Step 5: Associate Subnets to RT
+  5.1: Associate public Subnet to public RT
+  5.2: Associate private Subnet to private RT
+
+Step 6: Security Groups public and private with required rules for public and private subnets
+  6.1: In DB Security Group:
+    6.1.a: Port 22 and Port 27017 to Source: App Security Group
+  6.2: In App Security Group:
+    6.2.a: Port 80 and Port 3000 to Source: 0.0.0.0/16 ,
+    6.2.b: Port 22 to Source: My_IP
+
+Step 7: Create The Instances and add subnets and VPC
+  7.1: App Instances, add Public subnet
+    7.1.a: Ensure public IP is assigned
+  7.2: DB Instances, add Private subnet
+    7.2.a: Ensure public IP is not assigned
+
+Step 8: Navigate to .ssh folder, execute Commands
+  - eval `ssh-agent`
+  - ssh-add {XXXXX.pem}
+  - ssh -A ubuntu@APP-IP (To get into app instance)
+  - ssh ubuntu@DB-IP
+```
+![](img/VPC.png)
