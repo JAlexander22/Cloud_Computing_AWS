@@ -183,15 +183,18 @@ Load balancing distributes traffic between EC2 instances so that no one instance
 ![](img/scaling.png)
 
 
-#### Steps
-- Autoscaling Group: Launch Template or Launch configuration
+## Steps For Creating Auto scaling Group
+
+### Tools and Features used when creating Auto Scaling Instances
+```
+Autoscaling Group: Launch Template or Launch configuration
 ALB: Target group HTTP 80
 AWS keys
 VPC - Subnets - SG
 Type of instances
 AMI ID
 EBS storage
-
+```
 
 ### Create launch Template
 - Add a Name and select `Auto Scaling Guidance` Option & add a Template Tag
@@ -214,11 +217,11 @@ EBS storage
 - Add Tags
 
 ##AWS Networking
-`Virtual Private Cloud` - VPC is an private virtual representation of a physical network
-`Internet Gateway` -  To allow connection between VPC and Internet
-`Route Table` - Controls the flow of traffic between instances and internet gateway
-`Security Groups` - Are stateful, meaning changes made to incoming rules `will` be applied to out going rule. Security groups work on a instances level
-`NACL` - Network Access Control Lists are stateless, meaning any changes made to incoming rules `won't` be applied to outgoing rules. NACL work on a network level
+- `Virtual Private Cloud` - VPC is an private virtual representation of a physical network
+- `Internet Gateway` -  To allow connection between VPC and Internet
+- `Route Table` - Controls the flow of traffic between instances and internet gateway
+- `Security Groups` - Are stateful, meaning changes made to incoming rules `will` be applied to out going rule. Security groups work on a instances level
+- `NACL` - Network Access Control Lists are stateless, meaning any changes made to incoming rules `won't` be applied to outgoing rules. NACL work on a network level
 
 
 
