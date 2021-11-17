@@ -175,11 +175,13 @@ Firewall
 
 
 
-![](img/scaling.png)
 
 #### AutoScaling and Load Balancing
 Autoscaling Automatically adjusts the amount of computational resources based on the server Load
 Load balancing distributes traffic between EC2 instances so that no one instance gets overwhelmed
+
+![](img/scaling.png)
+
 
 #### Steps
 - Autoscaling Group: Launch Template or Launch configuration
