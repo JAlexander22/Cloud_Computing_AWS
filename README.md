@@ -168,11 +168,14 @@ Firewall
 
 
 
-![](img\Autoscalling.png)
 
 #### AWSCLI
 - AWSCLI can be used to create any `aws` recourses required.
 
+
+
+
+![](img\scaling.png)
 
 #### AutoScaling and Load Balancing
 Autoscaling Automatically adjusts the amount of computational resources based on the server Load
